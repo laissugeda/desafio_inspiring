@@ -12,7 +12,7 @@
     color: #FFFFFF;
 }
 .campo_pesquisa{
-    position: absolute;
+    /* position: absolute; */
     width: 380px;
     height: 50px;
     top: 159px;
@@ -25,6 +25,7 @@
     line-height: 21px;
     color: #ffff;
     align-items: center;
+    margin: 15px 0px;
 
 }
 input{
@@ -37,4 +38,108 @@ input{
     font-size: 18px;
     color: #FFFFFF;
     outline: none;
+}
+select{
+    background: #0B1641;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    width: 180px;
+    height: 50px;
+    border: none;
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 18px;
+    color: #ffffff6b;
+    outline: none;
+    padding: 7px;
+}
+
+option :hover{
+    color: #C70160
+}
+.textoOrdenarPor{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;display: flex;
+    align-items: center;
+    text-align: right;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 8px black;
+    margin-right: 20px;
+}
+.card{
+    height: 251px;
+    width: 380px;
+    border-radius: 8px;
+    background: #0B1641;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.imgCard{
+	max-width: 100%;
+	width: 380px;
+	height: 147px;
+	object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.titulo{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+.botaoDetalhes{
+    background: #C70160;
+    border-radius: 8px;
+    width: 116px;
+    height: 39px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 10px;
+}
+.precoNormal{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    text-decoration-line: line-through;
+    color: #FFFFFF;
+}
+.precoPromocao{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #FFFFFF;
+}
+.botaoVerde{
+    background: #16857B;
+    border-radius: 8px;
+    height: 39px;
+    width: 84;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-left: 10px;
 }
