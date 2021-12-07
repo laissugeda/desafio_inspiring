@@ -15,14 +15,26 @@
     position: absolute;
     width: 380px;
     height: 50px;
-    /* left: 130px; */
     top: 159px;
     background: #0B1641;
     border-radius: 8px;
     border-style: none;
     font-family: Roboto;
-    /* font-style: normal; */
     font-weight: 200;
     font-size: 18px;
     line-height: 21px;
+    color: #ffff;
+    align-items: center;
+
+}
+input{
+    width: 340px;
+    height: 30px;
+    background-color: #0B1641;
+    border: none;
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 18px;
+    color: #FFFFFF;
+    outline: none;
 }
