@@ -1,0 +1,38 @@
+:root {
+  --primario: #0b1641;
+  --secundario: #c70160;
+  --sucesso: #16857b;
+  --texto: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+    Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    var(--primario) 0%,
+    var(--secundario) 100%
+  );
+  background-attachment: fixed;
+  color: var(--texto);
+}
+
+figure {
+  margin: 0;
+}
+
+.preco-normal {
+  text-decoration: line-through;
+  display: block;
+}
+
+.preco-oferta {
+  margin: 4px 0;
+  font-size: 16pt;
+}

@@ -1,0 +1,36 @@
+header {
+    height: 50px;
+    display: flex;   
+    align-items: center;
+    background-color: #0B1641;
+    
+    .header-container {
+        display: flex;
+        justify-content: space-between;       
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;    
+        margin: 0 auto;
+        
+        nav {
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+    
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+    
+                &:hover {
+                    color: #C70160;
+                }
+            }
+    
+            .active-link {
+                font-weight: bold;
+                color: #C70160;
+            }
+        }        
+    }
+}

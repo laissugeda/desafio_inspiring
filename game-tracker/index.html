@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Oferta Tracker</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#C70160" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/pwa/apple-touch-icon.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilo.css" />
+    <script>
+      if (
+        "serviceWorker" in navigator &&
+        !window.location.host.includes("localhost") &&
+        window.location.host.includes("http")
+      ) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js");
+        });
+      }
+    </script>
+    <noscript>
+      Seu navegador não suporta javascript. Considere utilizar um navegador
+      moderno ou habilite execução de javascript.
+    </noscript>
+  </head>
+  <body>
+    <header>
+      <img src="assets/logo-horizontal.svg" alt="Logo Game Tracker" />
+    </header>
+
+    <h2>Ofertas</h2>
+
+    <main>
+      <article id="jogos-lista"></article>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

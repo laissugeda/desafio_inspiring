@@ -1,0 +1,19 @@
+section {
+  
+    .grid {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 0px;
+    }
+
+    .campos {
+        padding: 10px;
+        padding-left: 0;
+
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}

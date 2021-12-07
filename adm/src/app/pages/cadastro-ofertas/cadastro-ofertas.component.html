@@ -1,0 +1,59 @@
+<section>
+    <div class="container">
+        <h2>Cadastro de Ofertas</h2>
+
+        <div class="grid">
+            <div class="campos">
+                <mat-form-field appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput placeholder="ID do jogo">
+                </mat-form-field>
+            </div>
+
+
+            <div class="campos">
+                <mat-form-field appearance="outline">
+                    <mat-label>Título</mat-label>
+                    <input matInput placeholder="Título do jogo">
+                </mat-form-field>
+            </div>
+
+            <div class="campos">
+                <mat-form-field appearance="outline">
+                    <mat-label>Preço</mat-label>
+                    <input matInput placeholder="Título do jogo">
+                </mat-form-field>
+            </div>
+
+            <div class="campos">
+                <mat-form-field appearance="outline">
+                    <mat-label>Preço com desconto</mat-label>
+                    <input matInput placeholder="Peeço com deaconto">
+                </mat-form-field>
+            </div>
+
+            <div class="campos">
+                <mat-form-field appearance="outline" *ngFor="let loja of lojas">
+                    <mat-label>Loja</mat-label>
+                    <mat-select>
+                        <mat-option value="5">{{loja}}</mat-option>
+                        <mat-option value="2">{{loja}}</mat-option>
+                        <mat-option value="7">{{loja}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="campos">
+                <mat-form-field appearance="outline">
+                    <mat-label>Descrição</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div class="campos">
+            <button mat-raised-button color="primary">Salvar</button>
+        </div>
+    </div>
+</section>
