@@ -13,7 +13,7 @@ export class NossasOfertasComponent implements OnInit {
   displayedColumns: string[] = ['id', 'titulo', 'preco', 'precoDesconto'];
   dataSource;
   ofertas: Ofertas
-  games: Games[]=[]
+  games: Games[]
 
   constructor(
     private service: OfertasService,
@@ -25,6 +25,5 @@ export class NossasOfertasComponent implements OnInit {
       this.ofertas = res
       console.log(this.ofertas)
     })
-    
   }
 }

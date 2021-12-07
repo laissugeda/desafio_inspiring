@@ -20,5 +20,5 @@ export interface Games {
 	title: string
 }
 export interface Ofertas{
-	games: Games[]
+	games: Games
 }
