@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" *ngIf="ofertas">
         <div class="card" *ngFor="let game of ofertas">
                 <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg">
             <div style="padding: 10px;">
@@ -43,8 +43,8 @@
     </div>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" >
-        <button class="botaoCarregar">Carregar mais</button>
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="ofertas.length == soma">
+        <button class="botaoCarregar" (click)="botaoCarregarMais()">Carregar mais</button>
     </div>
 
 </div>

@@ -10,7 +10,11 @@ import { Games, Ofertas } from 'src/app/games.model';
 export class PrincipalComponent implements OnInit {
 
   ofertas!: any[]
+  ofertasMais!: any[]
   banner!: string
+  soma = 12
+
+
   constructor(
     private service: GamesService
   ) { }
@@ -21,11 +25,26 @@ export class PrincipalComponent implements OnInit {
       console.log(this.ofertas)
       }
     )  
+
+    // this.service.carregarMais().subscribe(res => {
+    //   this.ofertasMais = res
+    //   console.log(this.ofertasMais)
+    //   }
+    // )  
   }
 
   desconto(pp: number, pn: number){
     let aux = Math.round((pp*100/pn)-100)
     return aux
+  }
+
+  botaoCarregarMais(){
+    this.service.carregarMais(this.soma).subscribe(res => {
+      this.ofertas = res
+      this.soma += 12
+      console.log(this.ofertas)
+      }
+    ) 
   }
 
 }
