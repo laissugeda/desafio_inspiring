@@ -18,6 +18,7 @@ export class PrincipalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(document.getElementById("pesquisa")!)
     this.service.getPrincipal().subscribe(res => {
       this.ofertas = res
       this.ofertas.sort(function (a, b) {
