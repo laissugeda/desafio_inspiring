@@ -93,6 +93,10 @@ option :hover{
     font-size: 24px;
     line-height: 28px;
     color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: Ellipsis;
+    -o-text-overflow: Ellipsis;
 }
 .botaoDetalhes{
     background: #C70160;
@@ -108,6 +112,7 @@ option :hover{
     color: #FFFFFF;
     border: none;
     margin-top: 10px;
+    cursor: pointer;
 }
 .precoNormal{
     font-family: Roboto;
@@ -132,7 +137,7 @@ option :hover{
     background: #16857B;
     border-radius: 8px;
     height: 39px;
-    width: 84;
+    width: 84px;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -159,6 +164,7 @@ option :hover{
     color: #FFFFFF;
     border: none;
     margin-top: 50px;
+    cursor: pointer;
 }
 .botaoCarregar:hover{
     color:#C70160;

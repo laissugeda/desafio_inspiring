@@ -22,120 +22,29 @@
     </div>
 
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
-        <div class="card">
-                <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/418240/header.jpg">
+        <div class="card" *ngFor="let game of ofertas">
+                <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg">
             <div style="padding: 10px;">
                     <div fxLayout="row">
-                        <span class="titulo">RAGE 2</span>
+                        <span class="titulo">{{game.title}}</span>
                     </div>
                 <div fxLayout="row" fxLayoutAlign="space-between center">
                     <button class="botaoDetalhes">DETALHES</button>
                     <div fxLayout="row">
                         <div fxLayout="column">
-                            <span class="precoNormal">$ 199,00</span>
-                            <span class="precoPromocao">$ 0,00</span>
+                            <span class="precoNormal">{{game.normalPrice}}</span>
+                            <span class="precoPromocao">{{game.salePrice}}</span>
                         </div>
-                        <button class="botaoVerde">GRÁTIS</button>            
+                        <button class="botaoVerde">{{desconto(game.salePrice, game.normalPrice)}}%</button>            
                     </div>
                 </div>            
             </div>
-        </div>        
-
-
-
-
-        <div class="card">
-            <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/418240/header.jpg">
-        <div style="padding: 10px;">
-                <div fxLayout="row">
-                    <span class="titulo">RAGE 2</span>
-                </div>
-            <div fxLayout="row" fxLayoutAlign="space-between center">
-                <button class="botaoDetalhes">DETALHES</button>
-                <div fxLayout="row">
-                    <div fxLayout="column">
-                        <span class="precoNormal">$ 199,00</span>
-                        <span class="precoPromocao">$ 0,00</span>
-                    </div>
-                    <button class="botaoVerde">GRÁTIS</button>            
-                </div>
-            </div>            
-        </div>
-    </div>    
-
-
-
-
-
-    <div class="card">
-        <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/418240/header.jpg">
-    <div style="padding: 10px;">
-            <div fxLayout="row">
-                <span class="titulo">RAGE 2</span>
-            </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-            <button class="botaoDetalhes">DETALHES</button>
-            <div fxLayout="row">
-                <div fxLayout="column">
-                    <span class="precoNormal">$ 199,00</span>
-                    <span class="precoPromocao">$ 0,00</span>
-                </div>
-                <button class="botaoVerde">GRÁTIS</button>            
-            </div>
-        </div>            
+        </div>          
     </div>
-</div>    
 
-
-
-
-
-<div class="card">
-    <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/418240/header.jpg">
-<div style="padding: 10px;">
-        <div fxLayout="row">
-            <span class="titulo">RAGE 2</span>
-        </div>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-        <button class="botaoDetalhes">DETALHES</button>
-        <div fxLayout="row">
-            <div fxLayout="column">
-                <span class="precoNormal">$ 199,00</span>
-                <span class="precoPromocao">$ 0,00</span>
-            </div>
-            <button class="botaoVerde">GRÁTIS</button>            
-        </div>
-    </div>            
-</div>
-</div>    
-
-
-
-
-
-<div class="card">
-    <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/418240/header.jpg">
-<div style="padding: 10px;">
-        <div fxLayout="row">
-            <span class="titulo">RAGE 2</span>
-        </div>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-        <button class="botaoDetalhes">DETALHES</button>
-        <div fxLayout="row">
-            <div fxLayout="column">
-                <span class="precoNormal">$ 199,00</span>
-                <span class="precoPromocao">$ 0,00</span>
-            </div>
-            <button class="botaoVerde">GRÁTIS</button>            
-        </div>
-    </div>            
-</div>
-</div>    
-    </div>
 
     <div fxLayout="row" fxLayoutAlign="center center" >
         <button class="botaoCarregar">Carregar mais</button>
     </div>
-    
 
 </div>
