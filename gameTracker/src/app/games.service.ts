@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Games, Ofertas } from './games.model';
 import { Observable } from 'rxjs';
 
 
@@ -25,6 +24,6 @@ export class GamesService {
     let novo_valor = parseInt(valor_original)
     novo_valor += soma
     let nova_url = this.url.replace(valor_original, novo_valor.toString())
-    return this.http.get<any[]>(nova_url)
+      return this.http.get<any[]>(nova_url)
   }
 }

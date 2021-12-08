@@ -12,18 +12,37 @@
             <span class="textoOrdenarPor">
                 Ordenar por:
             </span>
-            <select>
-                <option>% de Desconto</option>
-                <option>Maior preço</option>
-                <option>Menor preço</option>
-                <option>Título</option>
-            </select>            
+            <button id="botaoSelect" class="select" (click)="abreSelect()">
+                {{option}}
+            </button>     
+
+            <div id="select" style="display: none;" >
+                <div fxLayout="column">
+                    <button (click)="abreSelect()" style="border-radius: 8px 8px 0 0;" class="select">
+                        {{option}}
+                    </button>
+                    <div fxLayout="column">
+                        <button (click)="ordenaPor('desconto')" class="option">
+                            % de Desconto
+                        </button>
+                        <button (click)="ordenaPor('maior_preco')" class="option">
+                            Maior preço
+                        </button>
+                        <button (click)="ordenaPor('menor_preco')" class="option">
+                            Menor preço
+                        </button>
+                        <button (click)="ordenaPor('titulo')" style="border-radius: 0 0 8px 8px;" class="option">
+                            Título
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" *ngIf="ofertas">
         <div class="card" *ngFor="let game of ofertas">
-                <img class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg">
+                <img id="banner" class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg" onError="this.src = './assets/sem-imagem.jpg'">
             <div style="padding: 10px;">
                     <div fxLayout="row">
                         <span class="titulo">{{game.title}}</span>
@@ -43,7 +62,7 @@
     </div>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="ofertas.length == soma">
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="ofertas?.length == soma">
         <button class="botaoCarregar" (click)="botaoCarregarMais()">Carregar mais</button>
     </div>
 
