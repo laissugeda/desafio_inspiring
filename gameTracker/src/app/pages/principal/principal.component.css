@@ -143,3 +143,23 @@ option :hover{
     border: none;
     margin-left: 10px;
 }
+.botaoCarregar{
+    width: 380px;
+    height: 50px;
+    background: #0B1641;
+    border-radius: 8px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 50px;
+}
+.botaoCarregar:hover{
+    color:#C70160;
+}
