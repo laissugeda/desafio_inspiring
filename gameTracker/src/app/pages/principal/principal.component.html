@@ -1,6 +1,6 @@
 <div class="container">
     <span class="texto1">Ofertas</span> <br>
-    <div fxLayout="row" fxLayoutAlign="space-between center" >
+    <div id="divPesquisa" fxLayout="row"  fxLayoutAlign="space-between start">
         <div class="campo_pesquisa">
             <div style="margin-top: 7px;" fxLayout="row" >
                 <mat-icon style="margin: auto 10px; color: #ffffff6b;">search</mat-icon>
@@ -8,7 +8,7 @@
             </div>
         </div>    
         
-        <div fxLayout="row" fxLayoutAlign="end center">
+        <div fxLayout="row" fxLayoutAlign="end start">
             <span class="textoOrdenarPor">
                 Ordenar por:
             </span>
@@ -41,7 +41,7 @@
     </div>
 
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" *ngIf="ofertas">
-        <div class="card" *ngFor="let game of ofertas">
+        <div class="card" *ngFor="let game of pageSize">
                 <img id="banner" class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg" onError="this.src = './assets/sem-imagem.jpg'">
             <div style="padding: 10px;">
                     <div fxLayout="row">
@@ -62,7 +62,7 @@
     </div>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="ofertas?.length == soma">
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="pageSize?.length == soma">
         <button class="botaoCarregar" (click)="botaoCarregarMais()">Carregar mais</button>
     </div>
 
