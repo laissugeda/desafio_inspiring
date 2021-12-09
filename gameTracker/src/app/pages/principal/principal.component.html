@@ -1,6 +1,6 @@
 <div class="container">
     <span class="texto1">Ofertas</span> <br>
-    <div id="divPesquisa" fxLayout="row" style="margin-top: 20px;" fxLayoutAlign="space-between start">
+    <div id="divPesquisa" fxLayout="row" style="margin-top: 20px; height: 60px;" fxLayoutAlign="space-between start">
         <div class="campo_pesquisa">
             <div style="margin-top: 7px;" fxLayout="row" >
                 <mat-icon style="margin: auto 10px; color: #ffffff6b;">search</mat-icon>
@@ -13,7 +13,9 @@
                 Ordenar por:
             </span>
             <button id="botaoSelect" class="select" (click)="abreSelect()">
-                {{option}} <mat-icon>expand_more</mat-icon>
+                {{option}}
+                <img style="height: 12px; margin-left: 7px;" src="./assets/seta.png">
+                <!-- <mat-icon>expand_more</mat-icon> -->
             </button>     
 
             <div id="select" style="display: none;" >

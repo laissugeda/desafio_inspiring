@@ -52,7 +52,6 @@ export class PrincipalComponent implements OnInit {
       document.getElementById("botaoSelect")!.style.display = "none"
       document.getElementById("select")!.style.display = "block" 
     }
-    console.log("funfgerg")
   }
 
   ordenaPor(filtro: string){
