@@ -12,18 +12,25 @@ export class NossasOfertasComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'titulo', 'preco', 'precoDesconto'];
   dataSource;
-  ofertas: Ofertas
-  games: Games[]
+  ofertas!: any[]
+  game: any = {}
 
   constructor(
     private service: OfertasService,
   ) { }
 
   ngOnInit(): void {
-    this.dataSource = JSON.parse(window.localStorage.getItem("ofertas-game-tracker"));
+    console.log(this.editar(112330))
+    //this.dataSource = JSON.parse(window.localStorage.getItem("ofertas-game-tracker"));
     this.service.getPrincipal().subscribe(res => {
-      this.ofertas = res
-      console.log(this.ofertas)
+      this.dataSource = res
+      console.log(this.dataSource)
+    })
+  }
+
+  editar(id: number){
+    this.service.getByID(id).subscribe(res =>{
+      this.game = res
     })
   }
 }

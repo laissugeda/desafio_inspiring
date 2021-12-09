@@ -8,6 +8,7 @@ import { MaterialModule } from './shared/material.module';
 import { CadastroOfertasComponent } from './pages/cadastro-ofertas/cadastro-ofertas.component';
 import { NossasOfertasComponent } from './pages/nossas-ofertas/nossas-ofertas.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

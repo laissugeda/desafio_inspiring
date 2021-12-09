@@ -7,7 +7,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -19,7 +21,10 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     MatButtonModule,
     MatTableModule,
-    CommonModule
+    CommonModule,
+    MatIconModule,
+    MatButton,
+    MatProgressSpinnerModule
   ],
   imports: [
     MatFormFieldModule,
@@ -28,7 +33,8 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     MatButtonModule,
     MatTableModule,
-    CommonModule
+    CommonModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }
