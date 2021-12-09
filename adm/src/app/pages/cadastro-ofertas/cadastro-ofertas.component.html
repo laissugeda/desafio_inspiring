@@ -2,58 +2,51 @@
     <div class="container">
         <h2>Cadastro de Ofertas</h2>
 
-        <div class="grid">
-            <div class="campos">
-                <mat-form-field appearance="outline">
-                    <mat-label>ID</mat-label>
-                    <input matInput placeholder="ID do jogo">
-                </mat-form-field>
-            </div>
+        <form [formGroup]="form">
+            <div class="grid">
+                <div class="campos">
+                    <mat-form-field appearance="outline">
+                        <mat-label>ID</mat-label>
+                        <input formControlName="gameID" type="number" matInput placeholder="ID do jogo">
+                    </mat-form-field>
+                </div>
 
 
-            <div class="campos">
-                <mat-form-field appearance="outline">
-                    <mat-label>Título</mat-label>
-                    <input matInput placeholder="Título do jogo">
-                </mat-form-field>
-            </div>
+                <div class="campos">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Título</mat-label>
+                        <input formControlName="title" matInput placeholder="Título do jogo">
+                    </mat-form-field>
+                </div>
 
-            <div class="campos">
-                <mat-form-field appearance="outline">
-                    <mat-label>Preço</mat-label>
-                    <input matInput placeholder="Título do jogo">
-                </mat-form-field>
-            </div>
+                <div class="campos">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Preço</mat-label>
+                        <input formControlName="normalPrice" matInput placeholder="Título do jogo">
+                    </mat-form-field>
+                </div>
 
-            <div class="campos">
-                <mat-form-field appearance="outline">
-                    <mat-label>Preço com desconto</mat-label>
-                    <input matInput placeholder="Peeço com deaconto">
-                </mat-form-field>
-            </div>
+                <div class="campos">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Preço com desconto</mat-label>
+                        <input formControlName="salePrice" matInput placeholder="Preço com desconto">
+                    </mat-form-field>
+                </div>
 
-            <div class="campos">
-                <mat-form-field appearance="outline" *ngFor="let loja of lojas">
-                    <mat-label>Loja</mat-label>
-                    <mat-select>
-                        <mat-option value="5">{{loja}}</mat-option>
-                        <mat-option value="2">{{loja}}</mat-option>
-                        <mat-option value="7">{{loja}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
+                <div class="campos">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Loja</mat-label>
+                        <mat-select formControlName="storeID">
+                            <mat-option *ngFor="let loja of lojas" value="{{loja.valor}}">{{loja.nome}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
 
+            </div>            
+        </form>
 
-            <div class="campos">
-                <mat-form-field appearance="outline">
-                    <mat-label>Descrição</mat-label>
-                    <input matInput placeholder="">
-                </mat-form-field>
-            </div>
-
-        </div>
         <div class="campos">
-            <button mat-raised-button color="primary">Salvar</button>
+            <button mat-raised-button color="primary" (click)="salvar()" [disabled]="form.invalid">Salvar</button>
         </div>
     </div>
 </section>
