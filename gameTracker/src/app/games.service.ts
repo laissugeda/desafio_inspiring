@@ -12,7 +12,7 @@ export class GamesService {
     private http: HttpClient
   ) { }
 
-  private url = "https://www.cheapshark.com/api/1.0/deals?pageNumber=0&storeID=1&onSale=1&AAA=1"
+  private url = "https://www.cheapshark.com/api/1.0/deals?storeID=1"
 
   public getPrincipal(): Observable<any[]>{
     return this.http.get<any[]>(this.url)
