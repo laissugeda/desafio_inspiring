@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OfertasService } from 'src/app/shared/ofertas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-ofertas',
@@ -19,7 +20,8 @@ export class CadastroOfertasComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private service: OfertasService
+    private service: OfertasService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class CadastroOfertasComponent implements OnInit {
         success => alert("Oferta criada com sucesso!"),
         error => alert(error)
       )
-      console.log("salvarrrr")
+      this.router.navigate(['/nossasofertas'])
     }
   }
 

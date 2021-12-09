@@ -14,26 +14,30 @@ export class OfertasService {
     private http: HttpClient
   ) { }
 
-  private urlDeals = "https://www.cheapshark.com/api/1.0/deals?"
-  private urlGames = "https://www.cheapshark.com/api/1.0/games?"
+  // private urlDeals = "https://www.cheapshark.com/api/1.0/deals?"
+  // private urlGames = "https://www.cheapshark.com/api/1.0/games?"
+  private url = "http://localhost:3000/ofertas/"
 
   public getPrincipal(): Observable<any[]>{
-    return this.http.get<any[]>(this.urlDeals + "storeID=1")
+    return this.http.get<any[]>(this.url)
   }
-  public getByID(id: number){
-    return this.http.get<any[]>(this.urlGames + "id=" + id)
+  public getByID(id: number): Observable<any[]>{
+    return this.http.get<any[]>(this.url + id)
   }
 
   update(id: number, data): Observable<any> {
-    return this.http.put(this.urlGames + "id=" + id, data);
+    return this.http.put(this.url + id, data);
   }
 
-  pesquisar(title: string): Observable<any> {
-    return this.http.get(this.urlGames + "title=" + title);
-  }
+  criar(oferta): Observable<any>{
+    return this.http.post(this.url, oferta).pipe(take(1))
+  }  
 
-  criar(oferta){
-    return this.http.post(this.urlDeals, oferta).pipe(take(1))
-  }
+
+  // pesquisar(title: string): Observable<any> {
+  //   return this.http.get(this.urlGames + "title=" + title);
+  // }
+
+
 
 }
