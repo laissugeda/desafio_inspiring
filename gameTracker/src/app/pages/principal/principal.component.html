@@ -1,6 +1,8 @@
 <div class="container">
-    <span class="texto1">Ofertas</span> <br>
-    <div id="divPesquisa" fxLayout="row" style="margin-top: 20px; height: 60px;" fxLayoutAlign="space-between start">
+    <div class="ajustaTexto1">
+        <span class="texto1">Ofertas</span> <br>       
+    </div>
+    <div id="divPesquisa" class="divPesquisa" fxLayout="row" fxLayoutAlign="space-between start">
         <div class="campo_pesquisa">
             <div style="margin-top: 7px;" fxLayout="row" >
                 <mat-icon style="margin: auto 10px; color: #ffffff6b;">search</mat-icon>
@@ -8,13 +10,13 @@
             </div>
         </div>    
         
-        <div fxLayout="row" fxLayoutAlign="end start">
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="end center" fxLayoutAlign.gt-sm="end start">
             <span class="textoOrdenarPor">
                 Ordenar por:
             </span>
             <button id="botaoSelect" class="select" (click)="abreSelect()">
                 {{option}}
-                <img style="height: 12px; margin-left: 7px;" src="./assets/seta.png">
+                <img class="imgSeta" src="./assets/seta.png">
                 <!-- <mat-icon>expand_more</mat-icon> -->
             </button>     
 
@@ -49,7 +51,7 @@
                     <div fxLayout="row">
                         <span class="titulo">{{game.title}}</span>
                     </div>
-                <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayoutAlign="space-between start">
                     <button class="botaoDetalhes">DETALHES</button>
                     <div fxLayout="row">
                         <div fxLayout="column">

@@ -18,6 +18,8 @@
     bottom: 0%;
     background-color: #0B1641;
     margin-top: 100px;
+    padding: 30px;
+
 }
 .textoFooter{
     font-family: Roboto;
@@ -43,7 +45,41 @@
     cursor: pointer;
 }
 
-/* 
-body{
-    background: linear-gradient(45deg, #0B1641 0%, #C70160 100%);
-} */
+.textosLinkMobile{
+    display: none !important;
+    /* justify-content: center;
+    display: flex;*/
+    text-align: center;
+
+}
+.textosLinkDesktop{
+    display: block;
+}
+
+@media (max-width: 768px){
+    .header{
+        padding-left: 0px;
+        justify-content: center;
+        display: flex;
+    }
+    .textosLinkDesktop{
+        display: none !important;
+    }
+    .textosLinkMobile{
+        display: block !important;
+        margin-right: -46px;
+        line-height: 30px;
+    }
+    .textoFooter{
+        font-size: 10px;
+    }
+    .textosLink{
+        font-size: 12px;
+    }
+    .footer{
+        height: 342px;
+    }
+    img{
+        height: 25px;
+    }
+}

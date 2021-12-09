@@ -192,20 +192,104 @@ input{
     color:#C70160;
 }
 
+.divPesquisa{
+    margin-top: 20px;
+    height: 90px;
+}
+.imgSeta{
+    height: 12px; 
+    margin-left: 7px;
+}
+
+@media(max-width: 959px){
+    .campo_pesquisa{
+        margin-top: 40px;
+    }
+    .textoOrdenarPor{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .divPesquisa{
+        margin-top: 0px;
+    }
+}
+
 @media (max-width: 768px){
     .campo_pesquisa{
         width: 174px;
         height: 36px;
+        margin-top: 33px;
     }
     input{
         width: 123px;
         height: 30px;
         margin-top: -5px;
+        font-size: 14px;
     }
     .select{
         width: 122px;
         height: 36px;
         font-size: 14px;
+    }
+    .option{
+        width: 122px;
+        height: 36px;
+        font-size: 14px;        
+    }
+    .textoOrdenarPor{
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    .ajustaTexto1{
+        justify-content: center;
+        display: flex;
+    }
+    .texto1{
+        font-size: 18px;
+    }
+    .container{
+        width: 96%;
+    }
+    .imgSeta{
+        height: 10px;
+        margin-left: 3px;
+    }
+    .divPesquisa{
+        height: 70px;
+    }
+    .botaoCarregar{
+        width: 304px;
+        font-size: 18px;
+    }
+    .card{
+        width: 304px;
+        height: 180px;
+    }
+    .titulo{
+        font-size: 18px;
+    }
+    .botaoDetalhes{
+        width: 92px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .botaoVerde{
+        width: 64px;
+        height: 31px;
+        font-size: 14px;
+    }
+    .precoNormal{
+        font-size: 10px;
+    }
+    .precoPromocao{
+        font-size: 14px;
+    }
+    .imgCard{
+        width: 304px;
+        height: 95px;
+    }
+    .botaoDetalhes{
+        margin-top: 0px;
     }
 
 }
