@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OfertasService } from 'src/app/shared/ofertas.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-cadastro-ofertas',
@@ -26,7 +27,8 @@ export class CadastroOfertasComponent implements OnInit {
     private fb: FormBuilder, 
     private service: OfertasService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -69,8 +71,8 @@ export class CadastroOfertasComponent implements OnInit {
     console.log(this.form.value)
     if (this.form.valid){
       this.service.criar(this.form.value).subscribe(
-        success => alert("Oferta criada com sucesso!"),
-        error => alert(error)
+        success => this.snackBar.open("Oferta salva com sucesso!", "X"),
+        error => this.snackBar.open(error, "X")
       )
       this.router.navigate(['/nossasofertas'])
     }
@@ -79,8 +81,8 @@ export class CadastroOfertasComponent implements OnInit {
   editar(id, data){
     if(this.form.valid){
       this.service.update(id, data).subscribe(
-        success => alert("Oferta editada com sucesso!"),
-        error => alert(error)
+        success => this.snackBar.open("Oferta editada com sucesso!", "X"),
+        error => this.snackBar.open(error, "X")
       )
       this.router.navigate(['/nossasofertas'])
     }

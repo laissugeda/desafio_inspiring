@@ -1,28 +1,11 @@
 {
   "ofertas": [
     {
-      "_isScalar": false,
-      "source": {
-        "_isScalar": false,
-        "source": {
-          "_isScalar": false,
-          "source": {
-            "_isScalar": false,
-            "source": {
-              "_isScalar": false
-            },
-            "operator": {
-              "concurrent": 1
-            }
-          },
-          "operator": {}
-        },
-        "operator": {}
-      },
-      "operator": {
-        "total": 1
-      },
-      "id": 1
+      "id": 1,
+      "title": "Jogo 1",
+      "normalPrice": 50.99,
+      "salePrice": 20,
+      "loja": "Epic"
     },
     {
       "id": 2,
@@ -64,6 +47,20 @@
       "normalPrice": "60",
       "salePrice": "6",
       "title": "Jogo 7",
+      "loja": "Origin"
+    },
+    {
+      "id": 8,
+      "normalPrice": "98.14",
+      "salePrice": "21.45",
+      "title": "Jogo 8",
+      "loja": "Epic"
+    },
+    {
+      "id": 9,
+      "normalPrice": "777",
+      "salePrice": "22",
+      "title": "Jogo 9",
       "loja": "Origin"
     }
   ]
