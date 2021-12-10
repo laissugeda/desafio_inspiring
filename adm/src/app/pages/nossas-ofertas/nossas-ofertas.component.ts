@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from 'src/app/shared/ofertas.service';
 import { Games, Ofertas } from 'src/app/shared/games.model';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-nossas-ofertas',
@@ -17,14 +18,13 @@ export class NossasOfertasComponent implements OnInit {
 
   constructor(
     private service: OfertasService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    console.log(this.editar(112330))
     //this.dataSource = JSON.parse(window.localStorage.getItem("ofertas-game-tracker"));
     this.service.getPrincipal().subscribe(res => {
       this.dataSource = res
-      console.log(this.dataSource)
     })
   }
 
@@ -32,5 +32,9 @@ export class NossasOfertasComponent implements OnInit {
     this.service.getByID(id).subscribe(res =>{
       this.game = res
     })
+  }
+
+  aEditar(id: number){
+    this.router.navigate(['editarOferta/' + id])
   }
 }

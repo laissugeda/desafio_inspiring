@@ -20,7 +20,7 @@
 
             <ng-container matColumnDef="precoDesconto">
                 <th mat-header-cell *matHeaderCellDef> Preço Desconto </th>
-                <td mat-cell *matCellDef="let element"> {{element.salePrice}}  <mat-icon style="float: right; cursor: pointer;" routerLink="/editarOferta/{{element.id}}">edit</mat-icon></td>
+                <td mat-cell *matCellDef="let element"> {{element.salePrice}}  <mat-icon style="float: right; cursor: pointer;" (click)="aEditar(element.id)">edit</mat-icon></td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

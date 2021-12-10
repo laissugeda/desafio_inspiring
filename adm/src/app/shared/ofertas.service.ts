@@ -14,15 +14,13 @@ export class OfertasService {
     private http: HttpClient
   ) { }
 
-  // private urlDeals = "https://www.cheapshark.com/api/1.0/deals?"
-  // private urlGames = "https://www.cheapshark.com/api/1.0/games?"
   private url = "http://localhost:3000/ofertas/"
 
-  public getPrincipal(): Observable<any[]>{
+  getPrincipal(): Observable<any[]>{
     return this.http.get<any[]>(this.url)
   }
-  public getByID(id: number): Observable<any[]>{
-    return this.http.get<any[]>(this.url + id)
+  getByID(id: number): Observable<any[]>{
+    return this.http.get<any[]>(this.url + id).pipe(take(1))
   }
 
   update(id: number, data): Observable<any> {

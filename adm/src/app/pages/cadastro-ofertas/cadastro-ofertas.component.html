@@ -7,7 +7,7 @@
                 <div class="campos">
                     <mat-form-field appearance="outline">
                         <mat-label>ID</mat-label>
-                        <input formControlName="gameID" type="number" matInput placeholder="ID do jogo">
+                        <input formControlName="id" type="number" matInput placeholder="ID do jogo">
                     </mat-form-field>
                 </div>
 
@@ -36,8 +36,8 @@
                 <div class="campos">
                     <mat-form-field appearance="outline">
                         <mat-label>Loja</mat-label>
-                        <mat-select formControlName="storeID">
-                            <mat-option *ngFor="let loja of lojas" value="{{loja.valor}}">{{loja.nome}}</mat-option>
+                        <mat-select formControlName="loja">
+                            <mat-option *ngFor="let loja of lojas" value="{{loja.nome}}">{{loja.nome}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
@@ -46,7 +46,7 @@
         </form>
 
         <div class="campos">
-            <button mat-raised-button color="primary" (click)="salvar()" [disabled]="form.invalid">Salvar</button>
+            <button mat-raised-button color="primary" (click)="setaMetodo()" [disabled]="form.invalid">Salvar</button>
         </div>
     </div>
 </section>

@@ -1,41 +1,70 @@
 {
   "ofertas": [
     {
-      "id": 1,
-      "title": "Jogo 1",
-      "normalPrice": 50.99,
-      "salePrice": 20,
-      "loja": 5
+      "_isScalar": false,
+      "source": {
+        "_isScalar": false,
+        "source": {
+          "_isScalar": false,
+          "source": {
+            "_isScalar": false,
+            "source": {
+              "_isScalar": false
+            },
+            "operator": {
+              "concurrent": 1
+            }
+          },
+          "operator": {}
+        },
+        "operator": {}
+      },
+      "operator": {
+        "total": 1
+      },
+      "id": 1
     },
     {
       "id": 2,
       "title": "Jogo 2",
       "normalPrice": 30.2,
       "salePrice": 9.5,
-      "loja": 7
+      "loja": "Origin"
     },
     {
       "id": 3,
       "title": "Jogo 3",
       "normalPrice": 62.1,
       "salePrice": 5.99,
-      "loja": 2
+      "loja": "Origin"
     },
     {
-      "gameID": 4,
+      "id": 4,
       "normalPrice": "21.85",
       "salePrice": "7.52",
       "title": "Jogo 4",
-      "storeID": "5",
-      "id": 4
+      "loja": "Epic"
     },
     {
-      "gameID": 5,
+      "id": 5,
       "normalPrice": "56.93",
       "salePrice": "3.99",
       "title": "Jogo 5",
-      "storeID": "2",
-      "id": 5
+      "loja": "Steam"
+    },
+    {
+      "id": 6,
+      "normalPrice": "12",
+      "salePrice": "1",
+      "title": "Jogo 6",
+      "loja": "Epic"
+    },
+    {
+      "id": 7,
+      "normalPrice": "60",
+      "salePrice": "6",
+      "title": "Jogo 7",
+      "loja": "Origin"
     }
   ]
 }

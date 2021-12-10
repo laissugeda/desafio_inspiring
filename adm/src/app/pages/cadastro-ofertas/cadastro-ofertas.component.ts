@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OfertasService } from 'src/app/shared/ofertas.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-ofertas',
@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 export class CadastroOfertasComponent implements OnInit {
 
   form: FormGroup
+  urlAtual: string
+  metodo = "salvar"
+  id: number
+  elemento
 
   lojas = [
     { id: 1, nome: 'Epic', valor: 5 },
@@ -21,17 +25,44 @@ export class CadastroOfertasComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private service: OfertasService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
+  this.urlAtual = this.route.toString()
+    if(this.urlAtual.includes('editar')){
+      this.metodo = "editar"
+      this.route.params.subscribe(
+        (params: any) => {
+          this.id = params['id']
+          console.log(this.id)
+          this.elemento = this.service.getByID(this.id)
+          this.elemento.subscribe(curso => {
+            this.atualizarForm(curso)
+          })
+        }
+      )      
+    }
+
+
     this.form = this.fb.group({
-      gameID: [null, [Validators.required]],
+      id: [null, [Validators.required]],
       normalPrice: [null, [Validators.required]],
       salePrice: [null, [Validators.required]],
       title: [null, [Validators.required]],
-      storeID: [null, [Validators.required]]
+      loja: [null, [Validators.required]]
     })
+
+  }
+
+  setaMetodo(){
+    if (this.metodo == "editar"){
+      this.editar(this.id, this.elemento)
+    }
+    else{
+      this.salvar()
+    }
   }
 
   salvar(){
@@ -43,6 +74,26 @@ export class CadastroOfertasComponent implements OnInit {
       )
       this.router.navigate(['/nossasofertas'])
     }
+  }
+
+  editar(id, data){
+    if(this.form.valid){
+      this.service.update(id, data).subscribe(
+        success => alert("Oferta editada com sucesso!"),
+        error => alert(error)
+      )
+      this.router.navigate(['/nossasofertas'])
+    }
+  }
+
+  atualizarForm(elemento){
+    this.form.patchValue({
+      id: elemento.id,
+      normalPrice: elemento.normalPrice,
+      salePrice: elemento.salePrice,
+      title: elemento.title,
+      loja: elemento.loja
+    })
   }
 
 }
