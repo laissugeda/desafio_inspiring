@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/games.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogDetalhesComponent } from 'src/app/dialog-detalhes/dialog-detalhes.component';
 
 @Component({
   selector: 'app-principal',
@@ -11,28 +13,32 @@ export class PrincipalComponent implements OnInit {
 
   ofertas!: any[]
   pageSize!: any[]
-  soma = 12
+  soma = 12 //item por página
   option = "% de Descontos"
   elementoPesquisa!: string
 
   constructor(
     private service: GamesService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
-    console.log(document.getElementById("pesquisa")!)
     this.service.getPrincipal().subscribe(res => {
       this.ofertas = res
-      this.ofertas.sort(function (a, b) {
-        let a1 = 100 - (Math.round(a.salePrice*100/a.normalPrice))
-        let b1 = 100 - (Math.round(b.salePrice*100/b.normalPrice))
-        return (a1 < b1) ? 1 : ((b1 < a1) ? -1 : 0);
-      })
-      this.pageSize = this.ofertas.slice(0, this.soma)      
-      //console.log(this.pageSize)
+      //ordena por desconto e fecha select
+      this.ordenaPor("% de Desconto")
+      this.abreSelect()
       }
     )  
+  }
+
+
+  abreDetalhes(id: number){
+    const dialogRef = this.dialog.open(DialogDetalhesComponent, {
+      width: '400px',
+      data: {id : id}
+    });
   }
 
   desconto(pp: number, pn: number){
@@ -64,7 +70,8 @@ export class PrincipalComponent implements OnInit {
       if (game.title.trim().toLowerCase().includes(this.elementoPesquisa)){
         resultado.push(game)
       }
-      {
+
+      if(this.elementoPesquisa.length > 2 && resultado.length == 0){
         this.snackBar.open("Jogo não encontrado!", " ", {duration: 3000})
       }
     }
@@ -72,15 +79,16 @@ export class PrincipalComponent implements OnInit {
   }
 
 
+// método de filtros
   ordenaPor(filtro: string){
     switch(filtro){
       case "maior_preco":
         this.option = "Maior preço"
         this.ofertas.sort(function (a, b) {
-          return a.salePrice - b.salePrice
+          return a.salePrice - b.salePrice //coloca em ordem crescente
         })
-        this.ofertas.reverse()
-        this.pageSize = this.ofertas.slice(0, this.soma)  
+        this.ofertas.reverse() // inverte a ordem, deixando decrescente
+        this.pageSize = this.ofertas.slice(0, this.soma)  // atualiza a ordem dos cards sem perder a quantidade por pagina
         this.abreSelect()
         break
 

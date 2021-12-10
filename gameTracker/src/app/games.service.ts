@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { take } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +17,7 @@ export class GamesService {
   public getPrincipal(): Observable<any[]>{
     return this.http.get<any[]>(this.url)
   }
-
-  public carregarMais(soma: number): Observable<any>{
-    let nova_url = this.url + "&pageSize=" + soma
-      return this.http.get<any[]>(nova_url)
+  public getByID(gameID: number){
+    return this.http.get('https://www.cheapshark.com/api/1.0/games?id=' + gameID).pipe(take(1))
   }
 }

@@ -14,10 +14,11 @@
             <span class="textoOrdenarPor">
                 Ordenar por:
             </span>
+
+            <!-- select filtros -->
             <button id="botaoSelect" class="select" (click)="abreSelect()">
                 {{option}}
                 <img class="imgSeta" src="./assets/seta.png">
-                <!-- <mat-icon>expand_more</mat-icon> -->
             </button>     
 
             <div id="select" style="display: none;" >
@@ -44,6 +45,7 @@
         </div>
     </div>
 
+    <!-- cards -->
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" *ngIf="ofertas; else spinner">
         <div class="card" *ngFor="let game of pageSize">
                 <img id="banner" class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg" onError="this.src = './assets/sem-imagem.jpg'">
@@ -52,7 +54,7 @@
                         <span class="titulo">{{game.title}}</span>
                     </div>
                 <div fxLayout="row" fxLayoutAlign="space-between start">
-                    <button class="botaoDetalhes">DETALHES</button>
+                    <button class="botaoDetalhes" (click)="abreDetalhes(game.gameID)">DETALHES</button>
                     <div fxLayout="row">
                         <div fxLayout="column">
                             <span class="precoNormal">{{game.normalPrice}}</span>

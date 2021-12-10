@@ -15,7 +15,7 @@ export class CadastroOfertasComponent implements OnInit {
   urlAtual: string
   metodo = "salvar"
   id: number
-  elemento
+  elemento: any
 
   lojas = [
     { id: 1, nome: 'Epic', valor: 5 },
@@ -38,7 +38,6 @@ export class CadastroOfertasComponent implements OnInit {
       this.route.params.subscribe(
         (params: any) => {
           this.id = params['id']
-          console.log(this.id)
           this.elemento = this.service.getByID(this.id)
           this.elemento.subscribe(curso => {
             this.atualizarForm(curso)
@@ -68,9 +67,8 @@ export class CadastroOfertasComponent implements OnInit {
   }
 
   salvar(){
-    console.log(this.form.value)
     if (this.form.valid){
-      this.service.criar(this.form.value).subscribe(
+      this.service.create(this.form.value).subscribe(
         success => this.snackBar.open("Oferta salva com sucesso!", "X"),
         error => this.snackBar.open(error, "X")
       )

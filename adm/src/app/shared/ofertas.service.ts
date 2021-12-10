@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Games, Ofertas } from './games.model';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 
@@ -27,15 +26,9 @@ export class OfertasService {
     return this.http.put(this.url + id, data);
   }
 
-  criar(oferta): Observable<any>{
+  create(oferta): Observable<any>{
     return this.http.post(this.url, oferta).pipe(take(1))
   }  
-
-
-  // pesquisar(title: string): Observable<any> {
-  //   return this.http.get(this.urlGames + "title=" + title);
-  // }
-
 
 
 }

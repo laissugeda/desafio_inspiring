@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from 'src/app/shared/ofertas.service';
-import { Games, Ofertas } from 'src/app/shared/games.model';
 import { Router } from '@angular/router'
 
 @Component({
@@ -22,15 +21,8 @@ export class NossasOfertasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.dataSource = JSON.parse(window.localStorage.getItem("ofertas-game-tracker"));
     this.service.getPrincipal().subscribe(res => {
       this.dataSource = res
-    })
-  }
-
-  editar(id: number){
-    this.service.getByID(id).subscribe(res =>{
-      this.game = res
     })
   }
 
