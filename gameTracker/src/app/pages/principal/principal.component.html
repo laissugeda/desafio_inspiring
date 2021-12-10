@@ -6,7 +6,7 @@
         <div class="campo_pesquisa">
             <div style="margin-top: 7px;" fxLayout="row" >
                 <mat-icon style="margin: auto 10px; color: #ffffff6b;">search</mat-icon>
-                <input type="text" placeholder="Procurar" id="pesquisa">
+                <input (keyup)="pesquisa($event)" type="text" placeholder="Procurar" id="pesquisa">
             </div>
         </div>    
         
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" *ngIf="ofertas">
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" *ngIf="ofertas; else spinner">
         <div class="card" *ngFor="let game of pageSize">
                 <img id="banner" class="imgCard" src="https://cdn.akamai.steamstatic.com/steam/apps/{{game.steamAppID}}/header.jpg" onError="this.src = './assets/sem-imagem.jpg'">
             <div style="padding: 10px;">
@@ -65,6 +65,9 @@
         </div>          
     </div>
 
+    <ng-template #spinner> 
+        <mat-spinner></mat-spinner> 
+    </ng-template>
 
     <div fxLayout="row" fxLayoutAlign="center center" *ngIf="pageSize?.length == soma">
         <button class="botaoCarregar" (click)="botaoCarregarMais()">Carregar mais</button>

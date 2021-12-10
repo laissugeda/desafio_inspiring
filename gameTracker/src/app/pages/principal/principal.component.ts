@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/games.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-principal',
@@ -12,9 +13,11 @@ export class PrincipalComponent implements OnInit {
   pageSize!: any[]
   soma = 12
   option = "% de Descontos"
+  elementoPesquisa!: string
 
   constructor(
-    private service: GamesService
+    private service: GamesService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +30,7 @@ export class PrincipalComponent implements OnInit {
         return (a1 < b1) ? 1 : ((b1 < a1) ? -1 : 0);
       })
       this.pageSize = this.ofertas.slice(0, this.soma)      
-      console.log(this.pageSize)
+      //console.log(this.pageSize)
       }
     )  
   }
@@ -53,6 +56,21 @@ export class PrincipalComponent implements OnInit {
       document.getElementById("select")!.style.display = "block" 
     }
   }
+
+  pesquisa(event: Event) {
+    this.elementoPesquisa = (event.target as HTMLInputElement).value;
+    let resultado = []
+    for (let game of this.ofertas){
+      if (game.title.trim().toLowerCase().includes(this.elementoPesquisa)){
+        resultado.push(game)
+      }
+      {
+        this.snackBar.open("Jogo não encontrado!", " ", {duration: 3000})
+      }
+    }
+    this.pageSize = resultado.slice(0, this.soma)
+  }
+
 
   ordenaPor(filtro: string){
     switch(filtro){
