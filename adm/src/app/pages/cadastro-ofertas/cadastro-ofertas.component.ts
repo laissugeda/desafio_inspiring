@@ -69,7 +69,7 @@ export class CadastroOfertasComponent implements OnInit {
   salvar(){
     if (this.form.valid){
       this.service.create(this.form.value).subscribe(
-        success => this.snackBar.open("Oferta salva com sucesso!", "X"),
+        success => this.snackBar.open("Oferta salva com sucesso!", " ", {duration: 3000}),
         error => this.snackBar.open(error, "X")
       )
       this.router.navigate(['/nossasofertas'])
@@ -79,7 +79,7 @@ export class CadastroOfertasComponent implements OnInit {
   editar(id, data){
     if(this.form.valid){
       this.service.update(id, data).subscribe(
-        success => this.snackBar.open("Oferta editada com sucesso!", "X"),
+        success => this.snackBar.open("Oferta editada com sucesso!", " ", {duration: 3000}),
         error => this.snackBar.open(error, "X")
       )
       this.router.navigate(['/nossasofertas'])
