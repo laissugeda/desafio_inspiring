@@ -58,8 +58,8 @@
                     <button class="botaoDetalhes" (click)="abreDetalhes(game.gameID)">DETALHES</button>
                     <div fxLayout="row">
                         <div fxLayout="column">
-                            <span class="precoNormal">${{game.normalPrice}}</span>
-                            <span class="precoPromocao">${{game.salePrice}}</span>
+                            <span class="precoNormal">$ {{game.normalPrice}}</span>
+                            <span class="precoPromocao">$ {{game.salePrice}}</span>
                         </div>
                         <button class="botaoVerde">{{desconto(game.salePrice, game.normalPrice)}}%</button>            
                     </div>
