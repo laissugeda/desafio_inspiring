@@ -23,13 +23,14 @@
     font-weight: 200;
     font-size: 18px;
     line-height: 21px;
-    color: #ffff;
+    color: #ffffff6b;
     align-items: center;
+    padding-top: 5px;
+    padding-right: 6px;
     /* margin: 15px 0px; */
-
 }
 input{
-    width: 340px;
+    width: 330px;
     height: 30px;
     background-color: #0B1641;
     border: none;
@@ -38,6 +39,9 @@ input{
     font-size: 18px;
     color: #FFFFFF;
     outline: none;
+}
+#fechar{
+    cursor: pointer;
 }
 .select{
     background: #0B1641;

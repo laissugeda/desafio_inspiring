@@ -7,6 +7,7 @@
             <div style="margin-top: 7px;" fxLayout="row" >
                 <mat-icon style="margin: auto 10px; color: #ffffff6b;">search</mat-icon>
                 <input (keyup)="pesquisa($event)" type="text" placeholder="Procurar" id="pesquisa">
+                <span (click)="apagarPesquisa()" *ngIf="elementoPesquisa" id="fechar">x</span>
             </div>
         </div>    
         

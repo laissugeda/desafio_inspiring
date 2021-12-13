@@ -16,7 +16,6 @@ export class PrincipalComponent implements OnInit {
   soma = 12 //item por página
   option = "% de Descontos"
   elementoPesquisa!: string
-  //resultado!: any[]
 
   constructor(
     private service: GamesService,
@@ -66,6 +65,12 @@ export class PrincipalComponent implements OnInit {
       document.getElementById("botaoSelect")!.style.display = "none"
       document.getElementById("select")!.style.display = "block" 
     }
+  }
+
+  apagarPesquisa(){
+    (<HTMLInputElement>document.getElementById("pesquisa")).value = ''
+    document.getElementById("fechar")!.style.display = "none"
+    this.pageSize = this.ofertas.slice(0, this.soma)
   }
 
   pesquisa(event: Event) {
